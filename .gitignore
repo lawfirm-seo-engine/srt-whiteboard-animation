@@ -4,9 +4,12 @@ __pycache__/
 .venv/
 venv/
 
-# 本地产物（成片体积大，不入库；banana 示例视频保留）
+# Local render outputs are ignored by default.
 *.mp4
 !examples/scene-01-monkey-mountain-banana-whiteboard.mp4
+
+# Keep final videos for admin playback/download.
+!projects/*/final.mp4
 
 # OS
 Thumbs.db
