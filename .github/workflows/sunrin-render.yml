@@ -1,0 +1,39 @@
+name: Sunrin Whiteboard Render
+on:
+  workflow_dispatch:
+    inputs:
+      mode:
+        description: images, preview or final
+        required: true
+        type: choice
+        options: [images, preview, final]
+      job:
+        description: Project folder id
+        required: true
+        type: string
+permissions:
+  contents: write
+jobs:
+  render:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Install dependencies
+        run: pip install opencv-python-headless numpy av Pillow
+      - name: Run pipeline
+        env:
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+          OPENAI_IMAGE_MODEL: ${{ vars.OPENAI_IMAGE_MODEL || 'gpt-image-2' }}
+        run: python scripts/sunrin_pipeline.py "${{ inputs.mode }}" "${{ inputs.job }}"
+      - name: Commit generated assets
+        run: |
+          git config user.name "sunrin-whiteboard-bot"
+          git config user.email "actions@users.noreply.github.com"
+          git add "projects/${{ inputs.job }}"
+          git diff --cached --quiet && exit 0
+          git commit -m "render: ${{ inputs.mode }} ${{ inputs.job }}"
+          git push
