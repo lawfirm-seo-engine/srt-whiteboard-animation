@@ -1,7 +1,9 @@
 {
-  "stage": "project-ready",
-  "imagesReady": false,
+  "stage": "error",
+  "imagesReady": true,
   "previewReady": false,
   "finalReady": false,
-  "error": null
+  "error": "Command '['/opt/hostedtoolcache/Python/3.11.16/x64/bin/python', '/home/runner/work/srt-whiteboard-animation/srt-whiteboard-animation/scripts/merge_scenes.py', '--inputs', '/home/runner/work/srt-whiteboard-animation/srt-whiteboard-animation/projects/sunrin-1787749682983/renders/scene-01.mp4', '/home/runner/work/srt-whiteboard-animation/srt-whiteboard-animation/projects/sunrin-1787749682983/renders/scene-02.mp4', '/home/runner/work/srt-whiteboard-animation/srt-whiteboard-animation/projects/sunrin-1787749682983/renders/scene-03.mp4', '/home/runner/work/srt-whiteboard-animation/srt-whiteboard-animation/projects/sunrin-1787749682983/renders/scene-04.mp4', '/home/runner/work/srt-whiteboard-animation/srt-whiteboard-animation/projects/sunrin-1787749682983/renders/scene-05.mp4', '/home/runner/work/srt-whiteboard-animation/srt-whiteboard-animation/projects/sunrin-1787749682983/renders/scene-06.mp4', '/home/runner/work/srt-whiteboard-animation/srt-whiteboard-animation/projects/sunrin-1787749682983/renders/scene-07.mp4', '/home/runner/work/srt-whiteboard-animation/srt-whiteboard-animation/projects/sunrin-1787749682983/renders/scene-08.mp4', '--output', '/home/runner/work/srt-whiteboard-animation/srt-whiteboard-animation/projects/sunrin-1787749682983/final.mp4']' returned non-zero exit status 1.",
+  "currentScene": 8,
+  "totalScenes": 8
 }
