@@ -1,0 +1,15 @@
+{
+  "id": "stock-reading-room",
+  "name": "주식리딩방 사기",
+  "sceneCount": 8,
+  "scenes": [
+    {"role":"hook","weight":1.0,"narration":"주식리딩방, 정말 믿어도 될까요?","visual":"A Korean office worker sees an enticing stock investment message on a smartphone, suspicious chat bubbles and rising stock chart around the phone."},
+    {"role":"approach","weight":1.1,"narration":"SNS와 메신저에서 투자 전문가나 증권사 관계자를 사칭해 접근합니다.","visual":"A smartphone receiving social media and messenger invitations from a person posing as an investment expert, profile icon, chat bubbles and stock symbols."},
+    {"role":"trust","weight":1.0,"narration":"높은 수익률과 다른 투자자의 성공 인증으로 신뢰를 쌓습니다.","visual":"Fake profit screenshots, upward chart, coins and enthusiastic group-chat reactions surrounding a skeptical investor."},
+    {"role":"deposit","weight":1.1,"narration":"이후 특별 종목이나 비공개 정보를 강조하며 더 큰 입금을 요구합니다.","visual":"An investment chat administrator points toward a VIP stock opportunity while arrows lead from a bank account to an investment app."},
+    {"role":"fake-profit","weight":1.0,"narration":"화면에는 수익이 계속 늘어나는 것처럼 표시됩니다.","visual":"A fake trading dashboard showing rapidly increasing profits while the investor looks relieved, with subtle warning symbols behind the screen."},
+    {"role":"withdrawal","weight":1.2,"narration":"하지만 출금을 요청하면 세금, 보증금, 인증비 같은 추가 입금을 요구합니다.","visual":"Investor presses a withdrawal button but a locked money icon appears, surrounded by tax, guarantee and verification fee symbols."},
+    {"role":"warning","weight":0.9,"narration":"출금이 막힌 상태에서 추가 송금을 반복해서는 안 됩니다.","visual":"A hand stops another bank transfer, large stop gesture between the investor and a suspicious investment platform."},
+    {"role":"cta","weight":1.4,"narration":"피해가 의심된다면 지금 바로 법무법인 선린 사기피해 특화 전문 TF팀에 상담 받으세요.","visual":"A worried investment victim consults a professional legal response team at a desk, documents and smartphone evidence organized clearly, reassuring professional atmosphere."}
+  ]
+}
