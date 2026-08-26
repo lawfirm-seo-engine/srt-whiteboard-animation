@@ -1,7 +1,9 @@
 {
-  "stage": "project-ready",
-  "imagesReady": false,
+  "stage": "final-ready",
+  "imagesReady": true,
   "previewReady": false,
-  "finalReady": false,
-  "error": null
+  "finalReady": true,
+  "error": null,
+  "currentScene": null,
+  "totalScenes": 8
 }
