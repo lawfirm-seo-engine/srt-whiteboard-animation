@@ -1,0 +1,107 @@
+{
+  "sceneId": "scene-04",
+  "canvas": {
+    "width": 1536,
+    "height": 1024
+  },
+  "storyBasis": "VIP 종목이라는 말과 함께 계좌에서 투자 앱으로 돈이 이동하는 장면",
+  "sceneDurationMs": 3793,
+  "elements": [
+    {
+      "id": "part-1",
+      "label": "part-1",
+      "sequence": 1,
+      "narrativeRole": "deposit",
+      "subtitle": "특별 종목과 비공개 정보를 강조하며 더 큰 입금을 요구합니다.",
+      "type": "structure",
+      "region": {
+        "x": 0,
+        "y": 0,
+        "width": 512,
+        "height": 1024
+      },
+      "reveal": {
+        "direction": "top_to_bottom",
+        "startMs": 200,
+        "durationMs": 1097,
+        "maskPaddingPx": 18,
+        "protectedRegions": []
+      },
+      "handPath": {
+        "start": [
+          256,
+          20
+        ],
+        "end": [
+          256,
+          1004
+        ],
+        "easing": "easeInOut"
+      }
+    },
+    {
+      "id": "part-2",
+      "label": "part-2",
+      "sequence": 2,
+      "narrativeRole": "deposit",
+      "subtitle": "특별 종목과 비공개 정보를 강조하며 더 큰 입금을 요구합니다.",
+      "type": "structure",
+      "region": {
+        "x": 512,
+        "y": 0,
+        "width": 512,
+        "height": 1024
+      },
+      "reveal": {
+        "direction": "top_to_bottom",
+        "startMs": 1331,
+        "durationMs": 1097,
+        "maskPaddingPx": 18,
+        "protectedRegions": []
+      },
+      "handPath": {
+        "start": [
+          768,
+          20
+        ],
+        "end": [
+          768,
+          1004
+        ],
+        "easing": "easeInOut"
+      }
+    },
+    {
+      "id": "part-3",
+      "label": "part-3",
+      "sequence": 3,
+      "narrativeRole": "deposit",
+      "subtitle": "특별 종목과 비공개 정보를 강조하며 더 큰 입금을 요구합니다.",
+      "type": "structure",
+      "region": {
+        "x": 1024,
+        "y": 0,
+        "width": 512,
+        "height": 1024
+      },
+      "reveal": {
+        "direction": "top_to_bottom",
+        "startMs": 2462,
+        "durationMs": 1097,
+        "maskPaddingPx": 18,
+        "protectedRegions": []
+      },
+      "handPath": {
+        "start": [
+          1280,
+          20
+        ],
+        "end": [
+          1280,
+          1004
+        ],
+        "easing": "easeInOut"
+      }
+    }
+  ]
+}
