@@ -1,0 +1,23 @@
+{
+  "brandName": "법무법인 선린",
+  "canvasColor": "#F5EBD7",
+  "inkColor": "#2F2F2F",
+  "accentColors": ["#8C1D18", "#1F4B6E", "#C97A2B"],
+  "logoPath": "assets/sunrin-logo.png",
+  "logoPosition": "top-right",
+  "logoOpacity": 0.9,
+  "drawingHandPath": "assets/drawing-hand.png",
+  "defaultAspect": "16:9",
+  "defaultDurationSec": 30,
+  "finalCta": "지금 바로 법무법인 선린 사기피해 특화 전문 TF팀에 상담 받으세요",
+  "visualRules": [
+    "warm cream paper background",
+    "dark gray hand-drawn ink lines",
+    "minimal red, blue and orange accents",
+    "clean whiteboard composition with generous negative space",
+    "no photorealism",
+    "no 3D rendering",
+    "no embedded text inside generated scene art",
+    "leave top-right safe area for the Sunrin logo"
+  ]
+}
