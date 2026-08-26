@@ -3,10 +3,10 @@ on:
   workflow_dispatch:
     inputs:
       mode:
-        description: images, preview or final
+        description: images, preview, final or direct
         required: true
         type: choice
-        options: [images, preview, final]
+        options: [direct, images, preview, final]
       job:
         description: Project folder id
         required: true
@@ -27,13 +27,15 @@ jobs:
       - name: Run pipeline
         env:
           OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
-          OPENAI_IMAGE_MODEL: ${{ vars.OPENAI_IMAGE_MODEL || 'gpt-image-2' }}
+          OPENAI_IMAGE_MODEL: ${{ vars.OPENAI_IMAGE_MODEL || 'gpt-image-1' }}
         run: python scripts/sunrin_pipeline.py "${{ inputs.mode }}" "${{ inputs.job }}"
       - name: Commit generated assets
+        if: always()
         run: |
           git config user.name "sunrin-whiteboard-bot"
           git config user.email "actions@users.noreply.github.com"
           git add "projects/${{ inputs.job }}"
           git diff --cached --quiet && exit 0
           git commit -m "render: ${{ inputs.mode }} ${{ inputs.job }}"
+          git pull --rebase origin main
           git push
