@@ -1,0 +1,94 @@
+{
+  "title": "주식리딩방사기",
+  "durationMs": 30000,
+  "aspect": "16:9",
+  "brand": {
+    "name": "법무법인 선린",
+    "canvasColor": "#F5EBD7",
+    "handAsset": "assets/drawing-hand.png",
+    "renderer": "scripts/render_stream_whiteboard.py",
+    "finalCta": "지금 바로 법무법인 선린 사기피해 특화 전문 TF팀에 상담 받으세요"
+  },
+  "scenes": [
+    {
+      "index": 1,
+      "role": "hook",
+      "weight": 1,
+      "narration": "주식리딩방, 정말 믿어도 될까요?",
+      "visual": "휴대폰에서 고수익 투자 메시지를 본 직장인, 주식 차트와 수상한 채팅 알림",
+      "startMs": 0,
+      "endMs": 3448,
+      "durationMs": 3448
+    },
+    {
+      "index": 2,
+      "role": "approach",
+      "weight": 1.1,
+      "narration": "SNS와 메신저에서 투자 전문가나 증권사 관계자를 사칭해 접근합니다.",
+      "visual": "SNS 프로필과 메신저 대화창, 투자 전문가를 사칭한 인물이 리딩방 초대 링크를 보내는 장면",
+      "startMs": 3448,
+      "endMs": 7241,
+      "durationMs": 3793
+    },
+    {
+      "index": 3,
+      "role": "trust",
+      "weight": 1,
+      "narration": "높은 수익률과 다른 투자자의 성공 인증으로 신뢰를 쌓습니다.",
+      "visual": "높은 수익률 화면, 가짜 성공 인증, 상승 그래프를 바라보는 투자자",
+      "startMs": 7241,
+      "endMs": 10689,
+      "durationMs": 3448
+    },
+    {
+      "index": 4,
+      "role": "deposit",
+      "weight": 1.1,
+      "narration": "특별 종목과 비공개 정보를 강조하며 더 큰 입금을 요구합니다.",
+      "visual": "VIP 종목이라는 말과 함께 계좌에서 투자 앱으로 돈이 이동하는 장면",
+      "startMs": 10689,
+      "endMs": 14482,
+      "durationMs": 3793
+    },
+    {
+      "index": 5,
+      "role": "fake-profit",
+      "weight": 1,
+      "narration": "화면에는 수익이 계속 늘어나는 것처럼 표시됩니다.",
+      "visual": "가짜 거래 화면에서 수익 숫자가 커지고 안심하는 투자자",
+      "startMs": 14482,
+      "endMs": 17930,
+      "durationMs": 3448
+    },
+    {
+      "index": 6,
+      "role": "withdrawal",
+      "weight": 1.2,
+      "narration": "출금을 요청하면 세금, 보증금, 인증비 같은 추가 입금을 요구합니다.",
+      "visual": "출금 버튼이 잠기고 세금, 보증금, 인증비 아이콘이 나타나는 장면",
+      "startMs": 17930,
+      "endMs": 22068,
+      "durationMs": 4138
+    },
+    {
+      "index": 7,
+      "role": "warning",
+      "weight": 0.9,
+      "narration": "출금이 막힌 상태에서 추가 송금을 반복해서는 안 됩니다.",
+      "visual": "송금 직전 손을 멈추게 하는 경고 표시와 잠긴 투자 플랫폼",
+      "startMs": 22068,
+      "endMs": 25171,
+      "durationMs": 3103
+    },
+    {
+      "index": 8,
+      "role": "cta",
+      "weight": 1.4,
+      "narration": "피해가 의심된다면 지금 바로 법무법인 선린 사기피해 특화 전문 TF팀에 상담 받으세요.",
+      "visual": "피해자가 휴대폰과 이체 자료를 들고 법률 대응 TF팀과 상담하는 장면",
+      "startMs": 25171,
+      "endMs": 30000,
+      "durationMs": 4829
+    }
+  ]
+}
