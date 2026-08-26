@@ -17,6 +17,7 @@ def load(job):
 
 def save_status(job, **data):
     p = project_dir(job) / "status.json"
+    p.parent.mkdir(parents=True, exist_ok=True)
     old = json.loads(p.read_text(encoding="utf-8")) if p.exists() else {}
     old.update(data)
     p.write_text(json.dumps(old, ensure_ascii=False, indent=2), encoding="utf-8")
@@ -30,7 +31,7 @@ def openai_image(prompt, out, size):
     req = urllib.request.Request("https://api.openai.com/v1/images/generations", method="POST")
     req.add_header("Authorization", f"Bearer {key}")
     req.add_header("Content-Type", "application/json")
-    body = json.dumps({"model": os.getenv("OPENAI_IMAGE_MODEL","gpt-image-2"), "prompt": prompt, "size": f"{size[0]}x{size[1]}", "quality":"medium"}).encode()
+    body = json.dumps({"model": os.getenv("OPENAI_IMAGE_MODEL","gpt-image-1"), "prompt": prompt, "size": f"{size[0]}x{size[1]}", "quality":"medium"}).encode()
     try:
         with urllib.request.urlopen(req, body, timeout=180) as r: data=json.load(r)
         item=data["data"][0]
@@ -43,10 +44,7 @@ def openai_image(prompt, out, size):
     return False
 
 def fallback_image(scene, out, size):
-    w,h=size; im=Image.new("RGB",size,BG); d=ImageDraw.Draw(im)
-    # clean drawable fallback: person + phone + chart + alert/lock, arranged to fit any scam scenario
-    lw=max(4,w//250)
-    cx,cy=w//2,h//2
+    w,h=size; im=Image.new("RGB",size,BG); d=ImageDraw.Draw(im); lw=max(4,w//250)
     d.ellipse((w*.10,h*.28,w*.25,h*.48),outline=INK,width=lw)
     d.line((w*.175,h*.48,w*.175,h*.78),fill=INK,width=lw)
     d.line((w*.175,h*.56,w*.08,h*.68),fill=INK,width=lw); d.line((w*.175,h*.56,w*.30,h*.65),fill=INK,width=lw)
@@ -71,12 +69,14 @@ def annotations(job, project):
 
 def generate_images(job):
     p=load(job); folder=project_dir(job)/"scenes"; folder.mkdir(parents=True,exist_ok=True); size=size_for(p.get("aspect"))
+    save_status(job,stage="images-running",imagesReady=False)
     for i,s in enumerate(p["scenes"],1):
         out=folder/f"scene-{i:02d}.png"
         prompt=(f"Premium hand-drawn whiteboard illustration on warm cream paper {BG}. {s.get('visual','')}. "
-                "Dark gray pen outlines, sparse muted navy and burgundy accents, no readable text, no logo, no photo realism, no 3D, generous negative space, clear separated objects, clean contours suitable for progressive pen drawing.")
+                "Dark gray pen outlines, sparse muted navy and burgundy accents, no readable text, no logo, no photorealism, no 3D, generous negative space, clear separated objects, clean contours suitable for progressive pen drawing.")
         if not openai_image(prompt,out,size): fallback_image(s,out,size)
-    annotations(job,p); save_status(job,stage="images-ready",imagesReady=True)
+        save_status(job,currentScene=i,totalScenes=len(p["scenes"]))
+    annotations(job,p); save_status(job,stage="images-ready",imagesReady=True,currentScene=None,totalScenes=len(p["scenes"]))
 
 def render_scene(job,index,total_ms=None):
     folder=project_dir(job)/"scenes"; renders=project_dir(job)/"renders"; renders.mkdir(parents=True,exist_ok=True)
@@ -86,22 +86,38 @@ def render_scene(job,index,total_ms=None):
     subprocess.run(cmd,check=True)
     return out
 
+def ensure_images(job):
+    p=load(job); folder=project_dir(job)/"scenes"
+    if not all((folder/f"scene-{i:02d}.png").exists() for i in range(1,len(p["scenes"])+1)):
+        generate_images(job)
+    else:
+        annotations(job,p)
+    return p
+
 def preview(job):
-    p=load(job); annotations(job,p); out=render_scene(job,1,min(7000,int(p["scenes"][0].get("durationMs") or 5000)))
+    p=ensure_images(job); save_status(job,stage="preview-running")
+    out=render_scene(job,1,min(7000,int(p["scenes"][0].get("durationMs") or 5000)))
     target=project_dir(job)/"preview.mp4"; target.write_bytes(out.read_bytes()); save_status(job,stage="preview-ready",previewReady=True)
 
 def final(job):
-    p=load(job); annotations(job,p); outs=[]
-    for i,s in enumerate(p["scenes"],1): outs.append(render_scene(job,i,int(s.get("durationMs") or 4000)))
+    p=ensure_images(job); save_status(job,stage="final-running",finalReady=False); outs=[]
+    for i,s in enumerate(p["scenes"],1):
+        save_status(job,currentScene=i,totalScenes=len(p["scenes"]))
+        outs.append(render_scene(job,i,int(s.get("durationMs") or 4000)))
     target=project_dir(job)/"final.mp4"
     subprocess.run([sys.executable,str(ROOT/"scripts/merge_scenes.py"),"--inputs",*[str(x) for x in outs],"--output",str(target)],check=True)
-    save_status(job,stage="final-ready",finalReady=True)
+    save_status(job,stage="final-ready",finalReady=True,imagesReady=True,currentScene=None,totalScenes=len(p["scenes"]))
+
+def direct(job):
+    save_status(job,stage="direct-running",imagesReady=False,previewReady=False,finalReady=False)
+    generate_images(job)
+    final(job)
 
 def main():
-    ap=argparse.ArgumentParser(); ap.add_argument("mode",choices=["images","preview","final"]); ap.add_argument("job")
+    ap=argparse.ArgumentParser(); ap.add_argument("mode",choices=["images","preview","final","direct"]); ap.add_argument("job")
     a=ap.parse_args(); save_status(a.job,stage=f"{a.mode}-running",error=None)
     try:
-        {"images":generate_images,"preview":preview,"final":final}[a.mode](a.job)
+        {"images":generate_images,"preview":preview,"final":final,"direct":direct}[a.mode](a.job)
     except Exception as e:
         save_status(a.job,stage="error",error=str(e)); raise
 if __name__=="__main__": main()
