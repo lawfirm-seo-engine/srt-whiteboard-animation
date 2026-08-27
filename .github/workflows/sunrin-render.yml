@@ -25,10 +25,7 @@ jobs:
       - name: Install dependencies
         run: pip install opencv-python-headless numpy av Pillow
       - name: Run pipeline
-        env:
-          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
-          OPENAI_IMAGE_MODEL: ${{ vars.OPENAI_IMAGE_MODEL || 'gpt-image-1' }}
-        run: python scripts/sunrin_pipeline.py "${{ inputs.mode }}" "${{ inputs.job }}"
+        run: python scripts/sunrin_pipeline_assets.py "${{ inputs.mode }}" "${{ inputs.job }}"
       - name: Commit generated assets
         if: always()
         run: |
