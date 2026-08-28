@@ -1,0 +1,107 @@
+{
+  "sceneId": "scene-10",
+  "canvas": {
+    "width": 1536,
+    "height": 1024
+  },
+  "storyBasis": "피해자가 자료를 준비해 법무법인 선린과 상담하는 장면",
+  "sceneDurationMs": 6057,
+  "elements": [
+    {
+      "id": "part-1",
+      "label": "part-1",
+      "sequence": 1,
+      "narrativeRole": "cta",
+      "subtitle": "피해가 의심된다면 지금 바로 법무법인 선린 사기피해 특화 전문 TF팀에 상담 받으세요.",
+      "type": "structure",
+      "region": {
+        "x": 0,
+        "y": 0,
+        "width": 512,
+        "height": 1024
+      },
+      "reveal": {
+        "direction": "top_to_bottom",
+        "startMs": 200,
+        "durationMs": 1852,
+        "maskPaddingPx": 18,
+        "protectedRegions": []
+      },
+      "handPath": {
+        "start": [
+          256,
+          20
+        ],
+        "end": [
+          256,
+          1004
+        ],
+        "easing": "easeInOut"
+      }
+    },
+    {
+      "id": "part-2",
+      "label": "part-2",
+      "sequence": 2,
+      "narrativeRole": "cta",
+      "subtitle": "피해가 의심된다면 지금 바로 법무법인 선린 사기피해 특화 전문 TF팀에 상담 받으세요.",
+      "type": "structure",
+      "region": {
+        "x": 512,
+        "y": 0,
+        "width": 512,
+        "height": 1024
+      },
+      "reveal": {
+        "direction": "top_to_bottom",
+        "startMs": 2085,
+        "durationMs": 1852,
+        "maskPaddingPx": 18,
+        "protectedRegions": []
+      },
+      "handPath": {
+        "start": [
+          768,
+          20
+        ],
+        "end": [
+          768,
+          1004
+        ],
+        "easing": "easeInOut"
+      }
+    },
+    {
+      "id": "part-3",
+      "label": "part-3",
+      "sequence": 3,
+      "narrativeRole": "cta",
+      "subtitle": "피해가 의심된다면 지금 바로 법무법인 선린 사기피해 특화 전문 TF팀에 상담 받으세요.",
+      "type": "structure",
+      "region": {
+        "x": 1024,
+        "y": 0,
+        "width": 512,
+        "height": 1024
+      },
+      "reveal": {
+        "direction": "top_to_bottom",
+        "startMs": 3971,
+        "durationMs": 1852,
+        "maskPaddingPx": 18,
+        "protectedRegions": []
+      },
+      "handPath": {
+        "start": [
+          1280,
+          20
+        ],
+        "end": [
+          1280,
+          1004
+        ],
+        "easing": "easeInOut"
+      }
+    }
+  ]
+}

@@ -1,9 +1,11 @@
 {
-  "stage": "project-ready",
-  "imagesReady": false,
+  "stage": "error",
+  "imagesReady": true,
   "previewReady": false,
   "finalReady": false,
-  "error": null,
+  "error": "[Errno 2] No such file or directory: 'ffmpeg'",
   "renderMode": "slide",
-  "useHandDrawing": false
+  "useHandDrawing": false,
+  "currentScene": 1,
+  "totalScenes": 10
 }

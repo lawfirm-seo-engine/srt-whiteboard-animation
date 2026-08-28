@@ -1,0 +1,107 @@
+{
+  "sceneId": "scene-02",
+  "canvas": {
+    "width": 1536,
+    "height": 1024
+  },
+  "storyBasis": "투자 전문가 사칭 계정과 리딩방 초대 메시지",
+  "sceneDurationMs": 4327,
+  "elements": [
+    {
+      "id": "part-1",
+      "label": "part-1",
+      "sequence": 1,
+      "narrativeRole": "approach",
+      "subtitle": "SNS와 메신저에서 투자 전문가를 사칭해 접근합니다.",
+      "type": "structure",
+      "region": {
+        "x": 0,
+        "y": 0,
+        "width": 512,
+        "height": 1024
+      },
+      "reveal": {
+        "direction": "top_to_bottom",
+        "startMs": 200,
+        "durationMs": 1275,
+        "maskPaddingPx": 18,
+        "protectedRegions": []
+      },
+      "handPath": {
+        "start": [
+          256,
+          20
+        ],
+        "end": [
+          256,
+          1004
+        ],
+        "easing": "easeInOut"
+      }
+    },
+    {
+      "id": "part-2",
+      "label": "part-2",
+      "sequence": 2,
+      "narrativeRole": "approach",
+      "subtitle": "SNS와 메신저에서 투자 전문가를 사칭해 접근합니다.",
+      "type": "structure",
+      "region": {
+        "x": 512,
+        "y": 0,
+        "width": 512,
+        "height": 1024
+      },
+      "reveal": {
+        "direction": "top_to_bottom",
+        "startMs": 1509,
+        "durationMs": 1275,
+        "maskPaddingPx": 18,
+        "protectedRegions": []
+      },
+      "handPath": {
+        "start": [
+          768,
+          20
+        ],
+        "end": [
+          768,
+          1004
+        ],
+        "easing": "easeInOut"
+      }
+    },
+    {
+      "id": "part-3",
+      "label": "part-3",
+      "sequence": 3,
+      "narrativeRole": "approach",
+      "subtitle": "SNS와 메신저에서 투자 전문가를 사칭해 접근합니다.",
+      "type": "structure",
+      "region": {
+        "x": 1024,
+        "y": 0,
+        "width": 512,
+        "height": 1024
+      },
+      "reveal": {
+        "direction": "top_to_bottom",
+        "startMs": 2818,
+        "durationMs": 1275,
+        "maskPaddingPx": 18,
+        "protectedRegions": []
+      },
+      "handPath": {
+        "start": [
+          1280,
+          20
+        ],
+        "end": [
+          1280,
+          1004
+        ],
+        "easing": "easeInOut"
+      }
+    }
+  ]
+}
