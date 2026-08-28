@@ -1,0 +1,127 @@
+{
+  "title": "주식리딩방 사기",
+  "durationMs": 30000,
+  "aspect": "16:9",
+  "source": "stock-card-preset-15",
+  "renderMode": "slide",
+  "useHandDrawing": false,
+  "brand": {
+    "name": "법무법인 선린",
+    "canvasColor": "#F5EBD7",
+    "handAsset": "assets/drawing-hand.png",
+    "renderer": "scripts/render_stream_whiteboard.py",
+    "finalCta": "지금 바로 법무법인 선린 사기피해 특화 전문 TF팀에 상담 받으세요"
+  },
+  "scenes": [
+    {
+      "index": 1,
+      "role": "hook",
+      "weight": 1,
+      "narration": "고수익을 보장한다는 주식 투자 광고, 정말 믿어도 될까요?",
+      "visual": "고수익 광고와 주식 차트를 확인하는 피해자",
+      "imageUrl": "https://raw.githubusercontent.com/lawfirm-seo-engine/srt-whiteboard-animation/main/assets/stock_card_01.png",
+      "startMs": 0,
+      "endMs": 2885,
+      "durationMs": 2885
+    },
+    {
+      "index": 2,
+      "role": "approach",
+      "weight": 1,
+      "narration": "SNS와 메신저에서 투자 전문가를 사칭해 접근합니다.",
+      "visual": "투자 전문가 사칭 계정과 리딩방 초대 메시지",
+      "imageUrl": "https://raw.githubusercontent.com/lawfirm-seo-engine/srt-whiteboard-animation/main/assets/stock_card_02.png",
+      "startMs": 2885,
+      "endMs": 5770,
+      "durationMs": 2885
+    },
+    {
+      "index": 3,
+      "role": "invite",
+      "weight": 1,
+      "narration": "비공개 리딩방과 특별 종목 정보를 제공하겠다며 참여를 유도합니다.",
+      "visual": "비공개 단체 채팅방과 종목 추천 메시지",
+      "imageUrl": "https://raw.githubusercontent.com/lawfirm-seo-engine/srt-whiteboard-animation/main/assets/stock_card_03.png",
+      "startMs": 5770,
+      "endMs": 8655,
+      "durationMs": 2885
+    },
+    {
+      "index": 4,
+      "role": "trust",
+      "weight": 1,
+      "narration": "다른 참여자의 수익 인증과 성공 사례로 신뢰를 쌓습니다.",
+      "visual": "가짜 수익 인증과 투자 성공 화면",
+      "imageUrl": "https://raw.githubusercontent.com/lawfirm-seo-engine/srt-whiteboard-animation/main/assets/stock_card_04.png",
+      "startMs": 8655,
+      "endMs": 11540,
+      "durationMs": 2885
+    },
+    {
+      "index": 5,
+      "role": "platform",
+      "weight": 1,
+      "narration": "전용 거래 사이트나 앱에 가입하도록 안내합니다.",
+      "visual": "가짜 투자 플랫폼 가입과 계정 생성",
+      "imageUrl": "https://raw.githubusercontent.com/lawfirm-seo-engine/srt-whiteboard-animation/main/assets/stock_card_05.png",
+      "startMs": 11540,
+      "endMs": 14425,
+      "durationMs": 2885
+    },
+    {
+      "index": 6,
+      "role": "deposit-small",
+      "weight": 1,
+      "narration": "처음에는 비교적 적은 금액의 입금을 요구합니다.",
+      "visual": "투자 계좌로 첫 입금을 진행하는 장면",
+      "imageUrl": "https://raw.githubusercontent.com/lawfirm-seo-engine/srt-whiteboard-animation/main/assets/stock_card_06.png",
+      "startMs": 14425,
+      "endMs": 17310,
+      "durationMs": 2885
+    },
+    {
+      "index": 7,
+      "role": "vip",
+      "weight": 1,
+      "narration": "VIP 종목과 특별 프로젝트를 강조하며 투자금을 키우게 합니다.",
+      "visual": "VIP 투자 프로젝트와 고수익 제안",
+      "imageUrl": "https://raw.githubusercontent.com/lawfirm-seo-engine/srt-whiteboard-animation/main/assets/stock_card_08.png",
+      "startMs": 17310,
+      "endMs": 20195,
+      "durationMs": 2885
+    },
+    {
+      "index": 8,
+      "role": "deposit-large",
+      "weight": 1,
+      "narration": "수천만 원대의 고액 송금을 반복해서 요구합니다.",
+      "visual": "고액 투자금이 가짜 플랫폼으로 이동하는 장면",
+      "imageUrl": "https://raw.githubusercontent.com/lawfirm-seo-engine/srt-whiteboard-animation/main/assets/stock_card_09.png",
+      "startMs": 20195,
+      "endMs": 23080,
+      "durationMs": 2885
+    },
+    {
+      "index": 9,
+      "role": "profit-surge",
+      "weight": 1,
+      "narration": "투자 화면의 수익은 계속 커지지만 실제 출금과는 무관합니다.",
+      "visual": "비정상적으로 급증하는 허위 수익 그래프",
+      "imageUrl": "https://raw.githubusercontent.com/lawfirm-seo-engine/srt-whiteboard-animation/main/assets/stock_card_10.png",
+      "startMs": 23080,
+      "endMs": 25965,
+      "durationMs": 2885
+    },
+    {
+      "index": 10,
+      "role": "cta",
+      "weight": 1.4,
+      "narration": "피해가 의심된다면 지금 바로 법무법인 선린 사기피해 특화 전문 TF팀에 상담 받으세요.",
+      "visual": "피해자가 자료를 준비해 법무법인 선린과 상담하는 장면",
+      "imageUrl": "https://raw.githubusercontent.com/lawfirm-seo-engine/srt-whiteboard-animation/main/assets/stock_card_15.png",
+      "startMs": 25965,
+      "endMs": 30000,
+      "durationMs": 4035
+    }
+  ]
+}
