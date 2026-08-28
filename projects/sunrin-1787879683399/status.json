@@ -1,9 +1,11 @@
 {
-  "stage": "project-ready",
-  "imagesReady": false,
+  "stage": "error",
+  "imagesReady": true,
   "previewReady": false,
   "finalReady": false,
-  "error": null,
+  "error": "Command '['ffmpeg', '-y', '-loop', '1', '-i', '/home/runner/work/srt-whiteboard-animation/srt-whiteboard-animation/projects/sunrin-1787879683399/scenes/scene-01.png', '-t', '2.885', '-vf', 'scale=1920:1080:force_original_aspect_ratio=decrease,pad=1920:1080:(ow-iw)/2:(oh-ih)/2:color=0xF5EBD7,fade=t=in:st=0:d=.20,fade=t=out:st=2.605:d=.28,format=yuv420p', '-an', '-c:v', 'libx264', '-preset', 'medium', '-crf', '20', '-movflags', '+faststart', '/home/runner/work/srt-whiteboard-animation/srt-whiteboard-animation/projects/sunrin-1787879683399/renders/scene-01.mp4']' returned non-zero exit status 234.",
   "renderMode": "slide",
-  "useHandDrawing": false
+  "useHandDrawing": false,
+  "currentScene": 1,
+  "totalScenes": 10
 }
