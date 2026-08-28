@@ -1,0 +1,107 @@
+{
+  "sceneId": "scene-07",
+  "canvas": {
+    "width": 1536,
+    "height": 1024
+  },
+  "storyBasis": "VIP 투자 프로젝트와 고수익 제안",
+  "sceneDurationMs": 2885,
+  "elements": [
+    {
+      "id": "part-1",
+      "label": "part-1",
+      "sequence": 1,
+      "narrativeRole": "vip",
+      "subtitle": "VIP 종목과 특별 프로젝트를 강조하며 투자금을 키우게 합니다.",
+      "type": "structure",
+      "region": {
+        "x": 0,
+        "y": 0,
+        "width": 512,
+        "height": 1024
+      },
+      "reveal": {
+        "direction": "top_to_bottom",
+        "startMs": 200,
+        "durationMs": 795,
+        "maskPaddingPx": 18,
+        "protectedRegions": []
+      },
+      "handPath": {
+        "start": [
+          256,
+          20
+        ],
+        "end": [
+          256,
+          1004
+        ],
+        "easing": "easeInOut"
+      }
+    },
+    {
+      "id": "part-2",
+      "label": "part-2",
+      "sequence": 2,
+      "narrativeRole": "vip",
+      "subtitle": "VIP 종목과 특별 프로젝트를 강조하며 투자금을 키우게 합니다.",
+      "type": "structure",
+      "region": {
+        "x": 512,
+        "y": 0,
+        "width": 512,
+        "height": 1024
+      },
+      "reveal": {
+        "direction": "top_to_bottom",
+        "startMs": 1028,
+        "durationMs": 795,
+        "maskPaddingPx": 18,
+        "protectedRegions": []
+      },
+      "handPath": {
+        "start": [
+          768,
+          20
+        ],
+        "end": [
+          768,
+          1004
+        ],
+        "easing": "easeInOut"
+      }
+    },
+    {
+      "id": "part-3",
+      "label": "part-3",
+      "sequence": 3,
+      "narrativeRole": "vip",
+      "subtitle": "VIP 종목과 특별 프로젝트를 강조하며 투자금을 키우게 합니다.",
+      "type": "structure",
+      "region": {
+        "x": 1024,
+        "y": 0,
+        "width": 512,
+        "height": 1024
+      },
+      "reveal": {
+        "direction": "top_to_bottom",
+        "startMs": 1856,
+        "durationMs": 795,
+        "maskPaddingPx": 18,
+        "protectedRegions": []
+      },
+      "handPath": {
+        "start": [
+          1280,
+          20
+        ],
+        "end": [
+          1280,
+          1004
+        ],
+        "easing": "easeInOut"
+      }
+    }
+  ]
+}
