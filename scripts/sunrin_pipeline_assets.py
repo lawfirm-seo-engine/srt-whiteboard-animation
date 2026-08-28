@@ -57,8 +57,8 @@ def _canvas(aspect):
 
 def _vf(mode, sec, w, h, index):
     base=f"scale={w}:{h}:force_original_aspect_ratio=decrease,pad={w}:{h}:(ow-iw)/2:(oh-ih)/2:color=0xF5EBD7"
-    fo=max(0.0,sec-.28)
-    fade=f"fade=t=in:st=0:d=.20,fade=t=out:st={fo:.3f}:d=.28"
+    fo=max(0.0,sec-0.28)
+    fade=f"fade=t=in:st=0:d=0.20,fade=t=out:st={fo:.3f}:d=0.28"
     if mode in ('slide','plain'):
         return f"{base},{fade},format=yuv420p"
     if mode=='zoom':
@@ -71,20 +71,21 @@ def _vf(mode, sec, w, h, index):
         x=f"iw/2-(iw/zoom/2)+{direction}*(on/30)*2"
         return f"{base},zoompan=z='min(zoom+0.00028,1.04)':x='{x}':y='ih/2-(ih/zoom/2)':d=1:s={w}x{h}:fps=30,{fade},format=yuv420p"
     if mode=='callout':
-        return f"{base},zoompan=z='if(lt(on,35),1,if(lt(on,75),1.07,1.025))':x='iw/2-(iw/zoom/2)':y='ih/2-(ih/zoom/2)':d=1:s={w}x{h}:fps=30,drawbox=x=w*.08:y=h*.08:w=w*.84:h=h*.84:color=0x8C1D18@0.38:t=3:enable='between(t,.7,1.7)',{fade},format=yuv420p"
+        return f"{base},zoompan=z='if(lt(on,35),1,if(lt(on,75),1.07,1.025))':x='iw/2-(iw/zoom/2)':y='ih/2-(ih/zoom/2)':d=1:s={w}x{h}:fps=30,drawbox=x=w*0.08:y=h*0.08:w=w*0.84:h=h*0.84:color=0x8C1D18@0.38:t=3:enable='between(t,0.7,1.7)',{fade},format=yuv420p"
     if mode=='card-stack':
-        return f"{base},scale='if(lt(t,.28),iw*(.90+t*.35),iw)':'if(lt(t,.28),ih*(.90+t*.35),ih)':eval=frame,pad={w}:{h}:(ow-iw)/2:(oh-ih)/2:color=0xF5EBD7,{fade},format=yuv420p"
+        return f"{base},scale='if(lt(t,0.28),iw*(0.90+t*0.35),iw)':'if(lt(t,0.28),ih*(0.90+t*0.35),ih)':eval=frame,pad={w}:{h}:(ow-iw)/2:(oh-ih)/2:color=0xF5EBD7,{fade},format=yuv420p"
     if mode=='news':
-        return f"{base},drawbox=x=0:y=h*.84:w=w:h=h*.16:color=0x172033@0.82:t=fill,drawbox=x=0:y=h*.84:w=w*.025:h=h*.16:color=0x8C1D18@1:t=fill,{fade},format=yuv420p"
+        return f"{base},drawbox=x=0:y=h*0.84:w=w:h=h*0.16:color=0x172033@0.82:t=fill,drawbox=x=0:y=h*0.84:w=w*0.025:h=h*0.16:color=0x8C1D18@1:t=fill,{fade},format=yuv420p"
     if mode=='glitch':
-        return f"{base},noise=alls=7:allf=t:enable='between(t,.10,.20)+between(t,1.0,1.10)',eq=contrast=1.08:saturation=.92,{fade},format=yuv420p"
+        return f"{base},noise=alls=7:allf=t:enable='between(t,0.10,0.20)+between(t,1.0,1.10)',eq=contrast=1.08:saturation=0.92,{fade},format=yuv420p"
     return f"{base},{fade},format=yuv420p"
 
 
 def _render_styled_scene(job,index,total_ms,mode,aspect):
     folder=sp.project_dir(job)/'scenes'; renders=sp.project_dir(job)/'renders'; renders.mkdir(parents=True,exist_ok=True)
-    img=folder/f'scene-{index:02d}.png'; out=renders/f'scene-{index:02d}.mp4'; sec=max(.6,int(total_ms or 4000)/1000.0); w,h=_canvas(aspect)
-    subprocess.run(['ffmpeg','-y','-loop','1','-i',str(img),'-t',f'{sec:.3f}','-vf',_vf(mode,sec,w,h,index),'-an','-c:v','libx264','-preset','medium','-crf','20','-movflags','+faststart',str(out)],check=True)
+    img=folder/f'scene-{index:02d}.png'; out=renders/f'scene-{index:02d}.mp4'; sec=max(0.6,int(total_ms or 4000)/1000.0); w,h=_canvas(aspect)
+    cmd=['ffmpeg','-y','-loop','1','-framerate','30','-i',str(img),'-t',f'{sec:.3f}','-vf',_vf(mode,sec,w,h,index),'-r','30','-an','-c:v','libx264','-preset','medium','-crf','20','-pix_fmt','yuv420p','-movflags','+faststart',str(out)]
+    subprocess.run(cmd,check=True)
     return out
 
 
@@ -100,7 +101,6 @@ def _styled_final(job,p,mode):
 
 def final(job):
     p=sp.load(job); mode=_mode(p)
-    # 핵심 수정: 손 렌더러는 renderMode가 정확히 hand일 때만 실행한다.
     if mode == HAND_MODE and p.get('useHandDrawing', True) is not False:
         sp.save_status(job,renderMode='hand',useHandDrawing=True)
         return ORIGINAL_FINAL(job)
