@@ -1,0 +1,107 @@
+{
+  "sceneId": "scene-11",
+  "canvas": {
+    "width": 1536,
+    "height": 1024
+  },
+  "storyBasis": "세금 보증금 인증비 추가 납부 요구",
+  "sceneDurationMs": 2419,
+  "elements": [
+    {
+      "id": "part-1",
+      "label": "part-1",
+      "sequence": 1,
+      "narrativeRole": "extra-fee",
+      "subtitle": "세금, 보증금, 인증비를 이유로 추가 입금을 요구합니다.",
+      "type": "structure",
+      "region": {
+        "x": 0,
+        "y": 0,
+        "width": 512,
+        "height": 1024
+      },
+      "reveal": {
+        "direction": "top_to_bottom",
+        "startMs": 200,
+        "durationMs": 639,
+        "maskPaddingPx": 18,
+        "protectedRegions": []
+      },
+      "handPath": {
+        "start": [
+          256,
+          20
+        ],
+        "end": [
+          256,
+          1004
+        ],
+        "easing": "easeInOut"
+      }
+    },
+    {
+      "id": "part-2",
+      "label": "part-2",
+      "sequence": 2,
+      "narrativeRole": "extra-fee",
+      "subtitle": "세금, 보증금, 인증비를 이유로 추가 입금을 요구합니다.",
+      "type": "structure",
+      "region": {
+        "x": 512,
+        "y": 0,
+        "width": 512,
+        "height": 1024
+      },
+      "reveal": {
+        "direction": "top_to_bottom",
+        "startMs": 873,
+        "durationMs": 639,
+        "maskPaddingPx": 18,
+        "protectedRegions": []
+      },
+      "handPath": {
+        "start": [
+          768,
+          20
+        ],
+        "end": [
+          768,
+          1004
+        ],
+        "easing": "easeInOut"
+      }
+    },
+    {
+      "id": "part-3",
+      "label": "part-3",
+      "sequence": 3,
+      "narrativeRole": "extra-fee",
+      "subtitle": "세금, 보증금, 인증비를 이유로 추가 입금을 요구합니다.",
+      "type": "structure",
+      "region": {
+        "x": 1024,
+        "y": 0,
+        "width": 512,
+        "height": 1024
+      },
+      "reveal": {
+        "direction": "top_to_bottom",
+        "startMs": 1546,
+        "durationMs": 639,
+        "maskPaddingPx": 18,
+        "protectedRegions": []
+      },
+      "handPath": {
+        "start": [
+          1280,
+          20
+        ],
+        "end": [
+          1280,
+          1004
+        ],
+        "easing": "easeInOut"
+      }
+    }
+  ]
+}

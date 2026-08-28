@@ -1,7 +1,10 @@
 {
-  "stage": "project-ready",
-  "imagesReady": false,
+  "stage": "final-ready",
+  "imagesReady": true,
   "previewReady": false,
-  "finalReady": false,
-  "error": null
+  "finalReady": true,
+  "error": null,
+  "renderMode": "hand",
+  "currentScene": null,
+  "totalScenes": 12
 }
